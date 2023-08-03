@@ -22,12 +22,12 @@ const importData=async()=>{
             return {...product,user:adminUser};
         });
         await Product.insertMany(sampleProducts);
-        console.log("Data imported",green.inverse);
+        console.log("Data imported");
         process.exit();
 
     }
     catch(error){
-    console.log(`${error}.red.inverse`);
+    console.log(`${error}`);
     process.exit();
     }
 }
@@ -36,10 +36,10 @@ const destroyData=async()=>{
         await Order.deleteMany();
         await Product.deleteMany();
         await User.deleteMany();
-        console.log("Data destroyed!".red.inverse);
+        console.log("Data destroyed!");
         process.exit();
     } catch (error) {
-        console.log(`${error}.red.inverse`);
+        console.log(`${error}`);
         process.exit();
     }
 }
